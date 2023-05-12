@@ -39,9 +39,3 @@ models:
       customer:
         +schema:  customer_schema
       
-      employees:
-      
-      employees_active_per_month:
-
-      ex_employees_days_on_contract:
-      
