@@ -1,4 +1,5 @@
-SELECT          YEAR(END_DATE)                          AS YEAR
+SELECT          --DATEDIFF('', MIN(START_DATE), 2023-12-31)
+                YEAR(END_DATE)                          AS YEAR
                 , MONTH(END_DATE)                       AS MONTH
                 , COUNT(EMPLOYEE_ID)                    AS NUMBER_OF_ACTIVE_CONTRACTS
 FROM {{ ref('employees') }}
