@@ -42,4 +42,6 @@ models:
       employees:
       
       employees_active_per_month:
+
+      ex_employees_days_on_contract:
       
