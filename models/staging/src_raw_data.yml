@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: public
+    description: a clone of a Postgress applicaiton database
+    database: raw_db
+    schema: public
+    tables:
+      - name: customer
+        description: the raw customer table
+        columns:
+          - name: col1
+            description: the column that contains whole data
+            tests:
+              - not_null
+
+      - name: employees
+        description: the raw comment count data
+        columns:
+          - name: TEAM
+            description: the column that contains whole data
+            tests:
+              - accepted_values:
+                  values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      
+      - name: employee_info
+        description: the raw view count data
+        columns:
+          - name: col1
+            description: the column that contains whole data
+            tests:
+              - not_null
+
+      - name: nation
+        description: the raw view count data
+        columns:
+          - name: col1
+            description: the column that contains whole data
+            tests:
+              - not_null
+      
+      - name: region
+        description: the raw view count data
+        columns:
+          - name: col1
+            description: the column that contains whole data
+            tests:
+              - not_null
