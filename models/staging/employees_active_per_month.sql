@@ -1,8 +1,8 @@
-SELECT          --DATEDIFF('', MIN(START_DATE), 2023-12-31)
-                YEAR(END_DATE)                          AS YEAR
-                , MONTH(END_DATE)                       AS MONTH
-                , COUNT(EMPLOYEE_ID)                    AS NUMBER_OF_ACTIVE_CONTRACTS
-FROM {{ ref('employees') }}
-WHERE END_DATE < '2023-12-31'
-GROUP BY YEAR(END_DATE), MONTH(END_DATE)
-ORDER BY YEAR(END_DATE), MONTH(END_DATE)
+SELECT COUNT(employees.EMPLOYEE_ID)         AS number_of_employees
+    , date_spine.MONTH
+    , date_spine.YEAR
+FROM {{ ref('date_spine') }}    AS date_spine
+LEFT JOIN employees
+    ON employees.start_date <= date_spine.date AND employees.end_date >= date_spine.date
+GROUP BY MONTH, YEAR
+ORDER BY YEAR

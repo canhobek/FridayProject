@@ -39,3 +39,6 @@ models:
       customer:
         +schema:  customer_schema
       
+      date_spine:
+        +schema:  intermediate_table
+      
