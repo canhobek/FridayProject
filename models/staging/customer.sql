@@ -20,6 +20,7 @@ FINAL AS (
             , C_PHONE                               AS      CUSTOMER_PHONE
             , C_ACCTBAL                             AS      CUSTOMER_ACCOUNT_BALANCE
             , C_MKTSEGMENT                          AS      CUSTOMER_MARKET_SEGMENT
+            , _FIVETRAN_SYNCED                      AS      _FIVETRAN_SYNCED
     FROM CUSTOMER
     INNER JOIN NATION
         ON CUSTOMER.C_NATIONKEY = NATION.N_NATIONKEY
